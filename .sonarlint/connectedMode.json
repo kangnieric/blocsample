@@ -1,0 +1,5 @@
+{
+    "sonarCloudOrganization": "rotarex",
+    "projectKey": "your_project_key",
+    "region": "EU"
+}

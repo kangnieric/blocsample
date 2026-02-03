@@ -1,0 +1,17 @@
+Analyzing blocsample...                                         
+
+   info • Don't invoke 'print' in production code • lib/bloc/post_form_cubit.dart:55:5 • avoid_print
+   info • The imported package 'path' isn't a dependency of the importing package • lib/database/app_database.dart:8:8 • depend_on_referenced_packages
+   info • Parameter 'key' could be a super parameter • lib/pages/add_post_page.dart:12:9 • use_super_parameters
+   info • Don't invoke 'print' in production code • lib/pages/add_post_page.dart:51:15 • avoid_print
+   info • Don't invoke 'print' in production code • lib/pages/add_post_page.dart:60:20 • avoid_print
+   info • Don't invoke 'print' in production code • lib/pages/add_post_page.dart:61:21 • avoid_print
+   info • Don't invoke 'print' in production code • lib/pages/add_post_page.dart:62:21 • avoid_print
+   info • Don't invoke 'print' in production code • lib/pages/add_post_page.dart:63:21 • avoid_print
+   info • Don't invoke 'print' in production code • lib/pages/add_post_page.dart:64:21 • avoid_print
+   info • Parameter 'key' could be a super parameter • lib/pages/edit_post_page.dart:14:9 • use_super_parameters
+   info • Parameter 'value' could be a super parameter • lib/validation/post_content.dart:6:21 • use_super_parameters
+   info • Parameter 'value' could be a super parameter • lib/validation/post_title.dart:6:19 • use_super_parameters
+  error • The getter 'content' isn't defined for the type 'PostFormState' • test/post_form_cubit_test.dart:27:26 • undefined_getter
+  error • The getter 'content' isn't defined for the type 'PostFormState' • test/post_form_cubit_test.dart:30:26 • undefined_getter
+

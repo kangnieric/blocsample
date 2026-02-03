@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "rotarex",
+        "projectKey": "your_project_key"
+    }
+}

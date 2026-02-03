@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "blocsample",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "blocsample (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "blocsample (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "Flutter (iPhone Wireless)",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "00008150-001D44523478401C"
+        }
+    ]
+}
