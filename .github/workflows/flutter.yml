@@ -30,18 +30,7 @@ jobs:
       - name: Flutter analyze
         run: flutter analyze
 
-      - name: Install Codacy CLI v2
-        run: |
-          curl -Ls https://raw.githubusercontent.com/codacy/codacy-cli-v2/main/codacy-cli.sh -o codacy-cli.sh
-          chmod +x codacy-cli.sh
-
-      - name: Codacy install runtimes/tools
-        run: ./codacy-cli.sh install
-
-      - name: Run dartanalyzer (SARIF)
-        run: ./codacy-cli.sh analyze -t dartanalyzer --format sarif -o dartanalyzer.sarif
-
-      - name: Upload report to Codacy
-        env:
-          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
-        run: ./codacy-cli.sh upload -s dartanalyzer.sarif -c ${{ github.sha }} -t "$CODACY_PROJECT_TOKEN"
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
