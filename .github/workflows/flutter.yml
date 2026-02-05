@@ -1,36 +1,26 @@
-name: Flutter CI + Codacy
+name: Flutter CI
 
-on:
-  pull_request:
-  push:
-    branches: [ main ]
+on: [pull_request, push]
 
 jobs:
-  analyze:
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+      - uses: subosito/flutter-action@v2
         with:
-          channel: stable
-          flutter-version: 3.38.9
           cache: true
 
-      - name: Pub get
-        run: flutter pub get
+      - run: flutter pub get
 
-      - name: Code generation
-        run: |
-          flutter pub run build_runner build \
-            --delete-conflicting-outputs
+      - run: flutter pub run build_runner build --delete-conflicting-outputs
 
-      - name: Flutter analyze
-        run: flutter analyze
+      - run: flutter analyze
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5
+      - run: flutter test --coverage
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage/lcov.info
