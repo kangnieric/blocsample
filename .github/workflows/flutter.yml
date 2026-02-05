@@ -15,25 +15,37 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-            channel: stable
-            flutter-version: 3.38.9
-            cache: true
+          channel: stable
+          flutter-version: 3.38.9
+          cache: true
+          # Keep caches inside the workspace so tools running in Docker (e.g. Codacy)
+          # can resolve `package:` URIs via the generated `.dart_tool/package_config.json`.
+          cache-path: ${{ github.workspace }}/.flutter
+          pub-cache-path: ${{ github.workspace }}/.pub-cache
 
       - name: Pub get
         run: flutter pub get
+        env:
+          PUB_CACHE: ${{ github.workspace }}/.pub-cache
 
       - name: Code generation
         run: |
           flutter pub run build_runner build \
             --delete-conflicting-outputs
+        env:
+          PUB_CACHE: ${{ github.workspace }}/.pub-cache
 
       - name: Flutter analyze
         run: flutter analyze
+        env:
+          PUB_CACHE: ${{ github.workspace }}/.pub-cache
 
+      
       # 🔑 This is what Codacy Cloud listens to
       - name: Upload results to Codacy
         uses: codacy/codacy-analysis-cli-action@v4
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           upload: true
+          tool: dartanalyzer
           max-allowed-issues: 2147483647
