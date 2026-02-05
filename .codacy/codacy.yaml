@@ -2,4 +2,4 @@ runtimes:
   - flutter@3.38.9
 
 tools:
-  - dartanalyzer@3.7.2
+  - dartanalyzer@3.7.20
