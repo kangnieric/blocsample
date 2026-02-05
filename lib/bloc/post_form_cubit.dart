@@ -52,6 +52,6 @@ class PostFormCubit extends Cubit<PostFormState> {
     if (!state.status.isValidated) return;
 
     // Add your repository logic here
-    print('Submitting Post: ${state.title.value}, ${state.body.value}');
+    //print('Submitting Post: ${state.title.value}, ${state.body.value}');
   }
 }
