@@ -9,7 +9,7 @@ import '../injection.dart';
 import '../ui/post_form.dart';
 
 class AddPostPage extends StatelessWidget {
-  const AddPostPage({Key? key}) : super(key: key);
+  const AddPostPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,6 @@ class AddPostPage extends StatelessWidget {
                 ..showSnackBar(
                   SnackBar(content: Text('Failed to add post: ${state.error}')),
                 );
-              print('AddPostFailure: ${state.error}');
             }
           },
           builder: (context, state) {
@@ -57,12 +56,6 @@ class AddPostPage extends StatelessWidget {
               child: PostForm(
                 onSubmit: () {
                   final cubit = context.read<PostFormCubit>();
-                   print('Current state: ${cubit.state}');
-                    print('Title valid: ${cubit.state.title.valid}');
-                    print('Body valid: ${cubit.state.body.valid}');
-                    print('Status: ${cubit.state.status}');
-                    print('Is validated: ${cubit.state.status.isValidated}');
-                    
                   if (cubit.state.status.isValidated) {
                     context.read<AddPostBloc>().add(
                           AddPostSubmitted(

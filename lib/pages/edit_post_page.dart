@@ -12,11 +12,11 @@ class EditPostPage extends StatelessWidget {
   final String initialBody;
 
   const EditPostPage({
-    Key? key,
+    super.key,
     required this.postId,
     required this.initialTitle,
     required this.initialBody,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,9 @@
 import 'package:formz/formz.dart';
 
-// Validation for Post Content
 class PostContent extends FormzInput<String, String> {
-  const PostContent.pure() : super.pure('');
-  const PostContent.dirty([String value = '']) : super.dirty(value);
+  const PostContent.pure([super.value = '']) : super.pure();
+
+  const PostContent.dirty([super.value = '']) : super.dirty();
 
   @override
   String? validator(String value) {

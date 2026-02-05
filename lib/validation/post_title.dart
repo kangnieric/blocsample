@@ -1,9 +1,9 @@
 import 'package:formz/formz.dart';
 
-// Validation for Post Title
 class PostTitle extends FormzInput<String, String> {
-  const PostTitle.pure() : super.pure('');
-  const PostTitle.dirty([String value = '']) : super.dirty(value);
+  const PostTitle.pure([super.value = '']) : super.pure();
+
+  const PostTitle.dirty([super.value = '']) : super.dirty();
 
   @override
   String? validator(String value) {
