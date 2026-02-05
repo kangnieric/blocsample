@@ -1,0 +1,17 @@
+---
+engines:
+  rubocop:
+    enabled: true
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - dart
+exclude_paths:
+  - "**.g.dart"
+  - "**.freezed.dart"
+  - "**/generated/**"
+  - "**/build/**"
+  - "**/.dart_tool/**"

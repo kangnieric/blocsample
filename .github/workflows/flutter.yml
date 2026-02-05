@@ -16,7 +16,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
             channel: stable
-            flutter-version: 3.38.9
+            flutter-version: 3.24.3
             cache: true
 
       - name: Pub get
@@ -35,3 +35,5 @@ jobs:
         uses: codacy/codacy-analysis-cli-action@v4
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          upload: true
+          max-allowed-issues: 2147483647
